@@ -3,9 +3,6 @@ import {
   LogLevelConfig as MoleculerLogLevelConfig,
 } from 'moleculer'
 import * as Winston from 'winston'
-import { ElasticsearchTransport } from 'winston-elasticsearch'
-import { ClientOptions } from '@elastic/elasticsearch'
-
 import Moment from 'moment'
 
 const LoggerConfig = {
@@ -28,19 +25,6 @@ const LoggerConfig = {
                 }. Metadata: ${JSON.stringify(info)}`
             )
           ),
-        }),
-        new ElasticsearchTransport({
-          clientOpts: {
-            node:
-              'https://af1d20bddc644dc8beea367b43476840.eastus2.azure.elastic-cloud.com:9243',
-            cloud: {
-              id:
-                'caue-prado:ZWFzdHVzMi5henVyZS5lbGFzdGljLWNsb3VkLmNvbTo5MjQzJGFmMWQyMGJkZGM2NDRkYzhiZWVhMzY3YjQzNDc2ODQwJGM3MGMxNTZlYzc5YTQ1ZDlhZDMwOTQ5NWM0NGJjMDdj',
-              username: 'elastic',
-              password: '2MOpkNrM0EhUT5y9LXjVHRrb',
-            },
-            maxRetries: 5,
-          } as ClientOptions,
         }),
       ],
     },
@@ -78,4 +62,3 @@ const LogLevelConfig = {
 } as MoleculerLogLevelConfig
 
 export { LoggerConfig, LogLevelConfig }
-export default LoggerConfig

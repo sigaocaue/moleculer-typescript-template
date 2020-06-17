@@ -1,5 +1,5 @@
 import { GenericObject } from 'moleculer'
-import options from 'src/moleculer/transporter/rabbitmq/options'
+import options from 'src/infrastructure/moleculer/transporter/rabbitmq/options'
 
 const RabbitmqTransporter = {
   type: 'AMQP',

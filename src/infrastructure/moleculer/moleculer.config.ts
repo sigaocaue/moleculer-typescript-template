@@ -1,9 +1,5 @@
 import { ServiceBroker as MoleculerServiceBroker } from 'moleculer'
-import * as DotEnv from 'dotenv'
-
-import BrokerOptions from 'src/moleculer/broker-options'
-
-DotEnv.config()
+import BrokerOptions from 'src/infrastructure/moleculer/broker-options'
 
 module.exports = ({
   ...BrokerOptions,
